@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>404 | Red Team Tips</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="404 | Red Team Tips">
+  <title>信息收集【第2节】- 子域名与解析记录 | Red Team Tips</title>
+  <meta name="keywords" content=" 信息收集 , 资产收集 , 域名 ">
+  <meta name="description" content="信息收集【第2节】- 子域名与解析记录 | Red Team Tips">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="A WebSite To Share With RedTeamMents">
 <meta property="og:type" content="website">
@@ -208,24 +208,40 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-信息收集【第2节】 - 子域名与解析记录" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">404</h1>
+        <h1 class="article-title">信息收集【第2节】- 子域名与解析记录</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a  data-rel="信息收集">信息收集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">信息收集</a>
+            
+            <a class="color5">资产收集</a>
+            
+            <a class="color3">域名</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-18 14:19:03'>2019-12-18 14:17</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-23 15:23:07'>2019-12-23 13:47</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:444</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -255,7 +271,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x00-前言"><span class="toc-text">0x00 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-DNSdumpster"><span class="toc-text">0x01 DNSdumpster</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-SecurityTrails"><span class="toc-text">0x02 SecurityTrails</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x03-DNSDB"><span class="toc-text">0x03 DNSDB</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x04-总结"><span class="toc-text">0x04 总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -271,13 +287,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h1><p>本着外围信息收集的原则，尽量通过第三方平台进行收集。红队or渗透禁忌“大规模扫描”。本期带来几个我工作中常用的几个DNS平台。</p>
+<h1 id="0x01-DNSdumpster"><a href="#0x01-DNSdumpster" class="headerlink" title="0x01 DNSdumpster"></a>0x01 DNSdumpster</h1><p><strong>网址：</strong> <a href="https://dnsdumpster.com/" target="_blank" rel="noopener">https://dnsdumpster.com/</a><br><strong>用法：</strong> 直接输入域名进行查询 ——例：dj.com<br><strong>优点：</strong> 无需注册，可查看DNSserver、MX记录、A记录、地图形式展示解析记录、解析记录可excel表格形式下载，数据更新快，准确率高，结果一目了然。<br><strong>可收集的信息：</strong> 部分子域名（含有部分难以爆破得到的子域名）、对应IP（部分可能是CDN的ip）<br><img src="https://i.loli.net/2019/12/23/b3jiVlmzPkwIfQ9.png" alt="网站就长这样"></p>
+<h1 id="0x02-SecurityTrails"><a href="#0x02-SecurityTrails" class="headerlink" title="0x02 SecurityTrails"></a>0x02 SecurityTrails</h1><p><strong>网址：</strong> <a href="https://securitytrails.com/" target="_blank" rel="noopener">https://securitytrails.com/</a><br><strong>用法：</strong> 直接输入域名进行查询 ——例：dj.com<br><strong>优点：</strong> 无需注册，可查看NS记录、MX记录、A记录等、历史解析IP，数据更新快，准确率高，结果一目了然。<br><strong>可收集的信息：</strong> 部分子域名（含有部分难以爆破得到的子域名）、对应IP（部分可能是CDN的ip）、历史解析域名<br><img src="https://i.loli.net/2019/12/23/ZTDOeqnC4xY1i5E.png" alt="网站就长这样"></p>
+<h1 id="0x03-DNSDB"><a href="#0x03-DNSDB" class="headerlink" title="0x03 DNSDB"></a>0x03 DNSDB</h1><p><strong>网址：</strong> <a href="https://dnsdb.io/zh-cn/" target="_blank" rel="noopener">https://dnsdb.io/zh-cn/</a><br><strong>用法：</strong> 直接输入域名进行查询 ——例：dj.com<br><strong>优点：</strong> 需注册才能查看NS记录、MX记录、A记录等。<br><strong>可收集的信息：</strong> 解析记录<br><img src="https://i.loli.net/2019/12/23/gpGaYL5E63vCMyB.png" alt="网站就长这样"></p>
+<h1 id="0x04-总结"><a href="#0x04-总结" class="headerlink" title="0x04 总结"></a>0x04 总结</h1><p>以上三个网站是查询DNS常用的3个网站，主要推荐前2个，因为不需要注册账号不需要VIP即可查看足够的信息。后面DNSDB需要注册账号开通VIP才可以查看，如果没有VIP基本上也没什么用。</p>
+<p>*注：其他平台并非不好用，只是本人渗透过程中用这几个比较多，综合使用情况来说这几个站还是比较好用的。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论 </span>
     </div>
 </article>
 
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>信息收集【第2节】- 子域名与解析记录</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">444</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="RedTeamTips">RedTeamTips</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-12-23, 13:47:55</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-23, 15:23:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/23/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E3%80%90%E7%AC%AC2%E8%8A%82%E3%80%91%20-%20%E5%AD%90%E5%9F%9F%E5%90%8D%E4%B8%8E%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95/" title="信息收集【第2节】- 子域名与解析记录">https://redteamtips.github.io/2019/12/23/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E3%80%90%E7%AC%AC2%E8%8A%82%E3%80%91%20-%20%E5%AD%90%E5%9F%9F%E5%90%8D%E4%B8%8E%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 
@@ -288,7 +322,7 @@
 
 <script>
     var gitment = new Gitment({
-        id: '404', // 可选。默认为 location.href
+        id: '信息收集【第2节】- 子域名与解析记录', // 可选。默认为 location.href
         owner: 'RedTeamTips',
         repo: 'redteamtips.github.io',
         oauth: {
